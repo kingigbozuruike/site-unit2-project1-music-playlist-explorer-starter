@@ -1,0 +1,500 @@
+{
+  "playlists": [
+    {
+      "playlistID": "pl001",
+      "playlist_name": "Afrobeats Essentials",
+      "playlist_author": "African Rhythms",
+      "playlist_art": "assets/img/playlist.png",
+      "songs": [
+        {
+          "songID": "s001",
+          "song_name": "Last Last",
+          "artist": "Burna Boy",
+          "album": "Love, Damini",
+          "duration": "2:54",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s002",
+          "song_name": "Essence",
+          "artist": "Wizkid ft. Tems",
+          "album": "Made in Lagos",
+          "duration": "4:09",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s003",
+          "song_name": "Calm Down",
+          "artist": "Rema",
+          "album": "Rave & Roses",
+          "duration": "3:59",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s004",
+          "song_name": "Rush",
+          "artist": "Ayra Starr",
+          "album": "19 & Dangerous",
+          "duration": "3:05",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s005",
+          "song_name": "Peru",
+          "artist": "Fireboy DML",
+          "album": "Playboy",
+          "duration": "3:24",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s006",
+          "song_name": "Sungba (Remix)",
+          "artist": "Asake ft. Burna Boy",
+          "album": "Mr. Money With The Vibe",
+          "duration": "3:36",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s007",
+          "song_name": "Terminator",
+          "artist": "Asake",
+          "album": "Work of Art",
+          "duration": "2:41",
+          "album_art": "assets/img/song.png"
+        }
+      ]
+    },
+    {
+      "playlistID": "pl002",
+      "playlist_name": "Pop Hits 2023",
+      "playlist_author": "Chart Toppers",
+      "playlist_art": "assets/img/playlist.png",
+      "songs": [
+        {
+          "songID": "s008",
+          "song_name": "Flowers",
+          "artist": "Miley Cyrus",
+          "album": "Endless Summer Vacation",
+          "duration": "3:20",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s009",
+          "song_name": "Kill Bill",
+          "artist": "SZA",
+          "album": "SOS",
+          "duration": "2:33",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s010",
+          "song_name": "Anti-Hero",
+          "artist": "Taylor Swift",
+          "album": "Midnights",
+          "duration": "3:20",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s011",
+          "song_name": "Cruel Summer",
+          "artist": "Taylor Swift",
+          "album": "Lover",
+          "duration": "2:58",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s012",
+          "song_name": "As It Was",
+          "artist": "Harry Styles",
+          "album": "Harry's House",
+          "duration": "2:47",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s013",
+          "song_name": "Unholy",
+          "artist": "Sam Smith & Kim Petras",
+          "album": "Gloria",
+          "duration": "2:36",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s014",
+          "song_name": "Creepin'",
+          "artist": "Metro Boomin, The Weeknd, 21 Savage",
+          "album": "Heroes & Villains",
+          "duration": "3:41",
+          "album_art": "assets/img/song.png"
+        }
+      ]
+    },
+    {
+      "playlistID": "pl003",
+      "playlist_name": "Indie Vibes",
+      "playlist_author": "Alternative Sounds",
+      "playlist_art": "assets/img/playlist.png",
+      "songs": [
+        {
+          "songID": "s015",
+          "song_name": "Chaise Longue",
+          "artist": "Wet Leg",
+          "album": "Wet Leg",
+          "duration": "3:17",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s016",
+          "song_name": "This Is Why",
+          "artist": "Paramore",
+          "album": "This Is Why",
+          "duration": "3:28",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s017",
+          "song_name": "Kyoto",
+          "artist": "Phoebe Bridgers",
+          "album": "Punisher",
+          "duration": "3:04",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s018",
+          "song_name": "Silk Chiffon",
+          "artist": "MUNA ft. Phoebe Bridgers",
+          "album": "MUNA",
+          "duration": "3:31",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s019",
+          "song_name": "Tummy Hurts",
+          "artist": "Remi Wolf",
+          "album": "Juno",
+          "duration": "3:44",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s020",
+          "song_name": "Chappell Roan",
+          "artist": "Good Luck, Babe!",
+          "album": "The Rise and Fall of a Midwest Princess",
+          "duration": "3:38",
+          "album_art": "assets/img/song.png"
+        }
+      ]
+    },
+    {
+      "playlistID": "pl004",
+      "playlist_name": "Hip Hop Essentials",
+      "playlist_author": "Beats & Rhymes",
+      "playlist_art": "assets/img/playlist.png",
+      "songs": [
+        {
+          "songID": "s021",
+          "song_name": "First Person Shooter",
+          "artist": "Drake ft. J. Cole",
+          "album": "For All The Dogs",
+          "duration": "4:21",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s022",
+          "song_name": "Not Like Us",
+          "artist": "Kendrick Lamar",
+          "album": "Single",
+          "duration": "3:26",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s023",
+          "song_name": "Surround Sound",
+          "artist": "JID ft. 21 Savage & Baby Tate",
+          "album": "The Forever Story",
+          "duration": "3:50",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s024",
+          "song_name": "TOPIA TWINS",
+          "artist": "Travis Scott ft. Rob49 & 21 Savage",
+          "album": "UTOPIA",
+          "duration": "3:30",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s025",
+          "song_name": "Spin Bout U",
+          "artist": "Drake & 21 Savage",
+          "album": "Her Loss",
+          "duration": "3:20",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s026",
+          "song_name": "All My Life",
+          "artist": "Lil Durk ft. J. Cole",
+          "album": "Almost Healed",
+          "duration": "3:38",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s027",
+          "song_name": "Sittin' On Da Toilet",
+          "artist": "YoungBoy Never Broke Again",
+          "album": "Decided 2",
+          "duration": "2:20",
+          "album_art": "assets/img/song.png"
+        }
+      ]
+    },
+    {
+      "playlistID": "pl005",
+      "playlist_name": "R&B Classics",
+      "playlist_author": "Soul Sessions",
+      "playlist_art": "assets/img/playlist.png",
+      "songs": [
+        {
+          "songID": "s028",
+          "song_name": "Snooze",
+          "artist": "SZA",
+          "album": "SOS",
+          "duration": "3:21",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s029",
+          "song_name": "Free Mind",
+          "artist": "Tems",
+          "album": "If Orange Was a Place",
+          "duration": "3:26",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s030",
+          "song_name": "Cuff It",
+          "artist": "Beyoncé",
+          "album": "Renaissance",
+          "duration": "3:45",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s031",
+          "song_name": "Hrs & Hrs",
+          "artist": "Muni Long",
+          "album": "Public Displays of Affection",
+          "duration": "3:30",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s032",
+          "song_name": "Plastic Off the Sofa",
+          "artist": "Beyoncé",
+          "album": "Renaissance",
+          "duration": "4:14",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s033",
+          "song_name": "CEILINGS",
+          "artist": "Lizzy McAlpine",
+          "album": "five seconds flat",
+          "duration": "3:04",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s034",
+          "song_name": "Die With A Smile",
+          "artist": "Lady Gaga & Bruno Mars",
+          "album": "Single",
+          "duration": "3:37",
+          "album_art": "assets/img/song.png"
+        }
+      ]
+    },
+    {
+      "playlistID": "pl006",
+      "playlist_name": "Electronic Dance Music",
+      "playlist_author": "Festival Vibes",
+      "playlist_art": "assets/img/playlist.png",
+      "songs": [
+        {
+          "songID": "s035",
+          "song_name": "Miracle",
+          "artist": "Calvin Harris & Ellie Goulding",
+          "album": "Single",
+          "duration": "3:40",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s036",
+          "song_name": "Rumble",
+          "artist": "Skrillex, Fred again.. & Flowdan",
+          "album": "Single",
+          "duration": "3:22",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s037",
+          "song_name": "Baby Again..",
+          "artist": "Fred again.. & Skrillex ft. Four Tet",
+          "album": "Single",
+          "duration": "3:47",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s038",
+          "song_name": "10:35",
+          "artist": "Tiësto & Tate McRae",
+          "album": "Single",
+          "duration": "2:55",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s039",
+          "song_name": "Escapism",
+          "artist": "RAYE & 070 Shake",
+          "album": "My 21st Century Blues",
+          "duration": "4:32",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s040",
+          "song_name": "Moth To A Flame",
+          "artist": "Swedish House Mafia & The Weeknd",
+          "album": "Paradise Again",
+          "duration": "3:54",
+          "album_art": "assets/img/song.png"
+        }
+      ]
+    },
+    {
+      "playlistID": "pl007",
+      "playlist_name": "Rock Anthems",
+      "playlist_author": "Guitar Heroes",
+      "playlist_art": "assets/img/playlist.png",
+      "songs": [
+        {
+          "songID": "s041",
+          "song_name": "Lost",
+          "artist": "Linkin Park",
+          "album": "Meteora 20th Anniversary Edition",
+          "duration": "3:19",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s042",
+          "song_name": "Beautiful Things",
+          "artist": "Benson Boone",
+          "album": "Fireworks & Rollerblades",
+          "duration": "3:34",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s043",
+          "song_name": "Jaded",
+          "artist": "Aerosmith",
+          "album": "Get a Grip",
+          "duration": "3:34",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s044",
+          "song_name": "Houdini",
+          "artist": "Catfish and the Bottlemen",
+          "album": "The Ride",
+          "duration": "3:03",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s045",
+          "song_name": "Annabelle",
+          "artist": "Creeper",
+          "album": "Sanguivore",
+          "duration": "3:38",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s046",
+          "song_name": "Stargazer",
+          "artist": "Rainbow",
+          "album": "Rising",
+          "duration": "8:26",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s047",
+          "song_name": "Everlong",
+          "artist": "Foo Fighters",
+          "album": "The Colour and the Shape",
+          "duration": "4:10",
+          "album_art": "assets/img/song.png"
+        }
+      ]
+    },
+    {
+      "playlistID": "pl008",
+      "playlist_name": "Latin Rhythms",
+      "playlist_author": "Ritmos Latinos",
+      "playlist_art": "assets/img/playlist.png",
+      "songs": [
+        {
+          "songID": "s048",
+          "song_name": "La Bachata",
+          "artist": "Manuel Turizo",
+          "album": "2000",
+          "duration": "2:42",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s049",
+          "song_name": "LALA",
+          "artist": "Myke Towers",
+          "album": "LA VIDA ES UNA",
+          "duration": "3:15",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s050",
+          "song_name": "Ella Baila Sola",
+          "artist": "Eslabon Armado & Peso Pluma",
+          "album": "DESVELADO",
+          "duration": "2:46",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s051",
+          "song_name": "TQG",
+          "artist": "KAROL G & Shakira",
+          "album": "MAÑANA SERÁ BONITO",
+          "duration": "3:17",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s052",
+          "song_name": "Beso",
+          "artist": "ROSALÍA & Rauw Alejandro",
+          "album": "RR",
+          "duration": "2:44",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s053",
+          "song_name": "Despechá",
+          "artist": "ROSALÍA",
+          "album": "MOTOMAMI +",
+          "duration": "2:38",
+          "album_art": "assets/img/song.png"
+        },
+        {
+          "songID": "s054",
+          "song_name": "Shakira: Bzrp Music Sessions, Vol. 53",
+          "artist": "Bizarrap & Shakira",
+          "album": "Single",
+          "duration": "3:37",
+          "album_art": "assets/img/song.png"
+        }
+      ]
+    }
+  ]
+}
