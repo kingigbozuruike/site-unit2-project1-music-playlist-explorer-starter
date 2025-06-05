@@ -1,6 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: white;
+}
+
+#navbar {
+    background-color: #c5c1c1;
+}
+#navbar-name {
+    margin-top: 0;
+    padding: 10px 10px 10px 10px;
+}
+
+footer {
+    background-color: #c5c1c1;
+    padding: 10px 10px 10px 10px;
+}
+
+.playlistcards {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    justify-content: center;
+    column-gap: 15px;
+    row-gap: 15px;}
+
+.playlist-card {
+    width: 300px;
+    padding: 10px;
+    border: #c5c1c1 solid 3px;
+    border-radius: 10px;
+    background-color: white;
+    align-items: center;
+}
+.playlist-image {
+    width: 100%;
+    height: 250px;
+    display: flex;
+}
+.playlist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.heart {
+    height: 25px;
+}
+.like-count {
+    display: flex;
+    gap: 5px;
+}
+.num {
+    margin: 0;
+}
+.playlist-info {
+    padding-left: 15px;
+}
+/* modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none; /* here to toggle display. note for later */
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    background-color: white;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+    display: flex;
+}
+
+/* modal content */
+.grid-row-1 {
+    display: grid;
+    grid-template-columns: 36% 64%;
+    margin: 2% 5% 0 5%;
+    padding: 0;
+}
+.grid-row-2 {
+    display: grid;
+    grid-template-columns: 18% 18% 64%;
+    margin: 2% 5% 0% 5%;
+    padding: 0;
+    border: #c5c1c1 solid 2px;
+    border-radius: 15px;
+}
+.grid-row-3 {
+    display: grid;
+    grid-template-columns: 18% 18% 64%;
+    margin: 2% 5% 0 5%;
+    padding: 0;
+    border: #c5c1c1 solid 2px;
+    border-radius: 15px;
+}
+.grid-row-4 {
+    display: grid;
+    grid-template-columns: 18% 18% 64%;
+    margin: 2% 5% 0 5%;
+    padding: 0;
+    border: #c5c1c1 solid 2px;
+    border-radius: 15px;
+}
+.modal-content {
+    display: grid;
+    grid-template-rows: 40% 20% 20% 20%;
+    flex-grow: 1;
+    margin-bottom: 3%;
+}
+.image-holder-1 {
+    width: 40%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-holder-1 img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.grid-row-1 .grid-col-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.grid-row-1 .grid-col-2 h2 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.grid-row-1 .grid-col-2 p {
+    padding-top: 6px;
+    margin-top: 0;
+}
+.grid-col-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-row-2 .grid-col-2 p {
+    padding-top: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.grid-row-2 .grid-col-2 h4 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.grid-row-3 .grid-col-2 p {
+    padding-top: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.grid-row-3 .grid-col-2 h4 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.grid-row-4 .grid-col-2 p {
+    padding-top: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.grid-row-4 .grid-col-2 h4 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.grid-col-3 {
+    text-align: right;
+    padding-right: 5%;
 }
