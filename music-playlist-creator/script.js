@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const playlists = data.playlists;
         if (isIndexPage) {
         initializeIndexPage(playlists);
+        fetchPlaylistData()
         }
         if (isFeaturedPage) {
         initializeFeaturedPage(playlists);
