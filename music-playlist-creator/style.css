@@ -4,7 +4,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color:rgb(36, 36, 36);
     min-height: 100vh;
     position: relative;
 }
@@ -19,20 +19,66 @@ body {
 .right-side {
     display: flex;
     gap: 20px;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 8px 12px;
+    border: 1px solid #c5c1c1;
+    border-radius: 5px 0 0 5px;
+    font-family: 'Poppins', sans-serif;
+    width: 200px;
+}
+
+#search-button {
+    padding: 8px 12px;
+    background-color: #b60000;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+#search-button:hover {
+    background-color: #8e0000;
+}
+
+.sort-container {
+    display: flex;
+    align-items: center;
+}
+
+#sort-select {
+    padding: 8px 12px;
+    border: 1px solid #c5c1c1;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
 }
 
 footer {
-    background-color: #c5c1c1;
-    padding: 10px 10px 10px 10px;
+    color: white;
+    padding: 0;
     position: absolute;
     bottom: 0;
     width: 100%;
+    text-align: center;
+    margin: 0;
+}
+.footer-content p {
+    margin: 0;
 }
 
 .playlistcards {
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
+    /* background-color: white; */
     justify-content: center;
     column-gap: 15px;
     row-gap: 15px;
@@ -252,44 +298,307 @@ overflow-y: auto;
 max-height: 78vh;
 }
 
-/* .song-row {
-display: flex;
-align-items: center;
-padding: 10px 0;
-border-bottom: 1px solid #eee;
+.add-button {
+    cursor: pointer;
+    color: #333;
+    justify-items: center;
+    border: #b60000 solid 2px;
+    border-radius: 10px;
+}
+.add-button img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.add-button span{
+    font-size: 1.5rem;
+}
+span {
+    font-family: 'Poppins', sans-serif;
+}
+.add-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
 }
 
-.song-row .grid-col-1 {
-width: 60px;
-margin-right: 15px;
+.add {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 70%;
+    background-color: white;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-bottom: 15px;
 }
 
-.song-row .grid-col-1 img {
-width: 60px;
-height: 60px;
-border-radius: 6px;
-object-fit: cover;
+.add-content {
+    padding: 20px 40px;
+    overflow-y: auto;
 }
 
-.song-row .grid-col-2 {
-flex-grow: 1;
+#create-playlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.song-row .grid-col-2 h4 {
-margin: 0 0 4px 0;
-font-size: 1rem;
-font-weight: 600;
+#create-playlist-form h3 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+    font-size: 1.8rem;
 }
 
-.song-row .grid-col-2 p {
-margin: 2px 0;
-color: #555;
-font-size: 0.9rem;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
-.song-row .grid-col-3 {
-width: 50px;
-text-align: right;
-font-size: 0.9rem;
-color: #666;
-} */
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    padding: 8px 12px;
+    border: 1px solid #c5c1c1;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#songs-section {
+    margin-top: 10px;
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+}
+
+#songs-section h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.song-entry {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.song-entry:not(:first-child) {
+    border-top: 1px dashed #c5c1c1;
+    padding-top: 15px;
+}
+
+#add-song-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+#add-song-button:hover {
+    background-color: #45a049;
+}
+
+#create-playlist-form button[type="submit"] {
+    background-color: #b60000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    align-self: center;
+    margin-top: 10px;
+}
+
+#create-playlist-form button[type="submit"]:hover {
+    background-color: #8e0000;
+}
+
+.delete-song-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+    align-self: flex-start;
+    font-size: 0.9rem;
+}
+
+.delete-song-button:hover {
+    background-color: #e60000;
+}
+
+.delete-playlist-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.playlist-card {
+    position: relative;
+}
+
+.playlist-card:hover .delete-playlist-button {
+    opacity: 1;
+}
+
+.delete-playlist-button:hover {
+    background-color: #e60000;
+}
+
+.edit-playlist-button {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.playlist-card:hover .edit-playlist-button {
+    opacity: 1;
+}
+
+.edit-playlist-button:hover {
+    background-color: #45a049;
+}
+
+.edit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.edit {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 70%;
+    background-color: white;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+.edit-content {
+    padding: 20px 40px;
+    overflow-y: auto;
+}
+
+#edit-playlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#edit-playlist-form h3 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+#edit-songs-section {
+    margin-top: 10px;
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+}
+
+#edit-songs-section h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#edit-add-song-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+#edit-add-song-button:hover {
+    background-color: #45a049;
+}
+
+#edit-playlist-form button[type="submit"] {
+    background-color: #b60000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    align-self: center;
+    margin-top: 10px;
+}
+
+#edit-playlist-form button[type="submit"]:hover {
+    background-color: #8e0000;
+}

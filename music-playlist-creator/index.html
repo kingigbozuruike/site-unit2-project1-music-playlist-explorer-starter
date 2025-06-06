@@ -16,6 +16,23 @@
                 <h1 id="navbar-name">Music Playlist Explorer</h1>
             </div>
             <div class="right-side">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search playlists...">
+                    <button id="search-button">Search</button>
+                </div>
+                <div class="sort-container">
+                    <select id="sort-select">
+                        <option value="default">Sort by</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                        <option value="songs-asc">Songs (Fewest)</option>
+                        <option value="songs-desc">Songs (Most)</option>
+                    </select>
+                </div>
+                <button class="add-button">
+                    <img src="https://img.icons8.com/?size=60&id=60953&format=png" alt="" class="search-icon">
+                    <span class="add-text">Add</span>
+                </button>
                 <h4 id="home"><a href=".">Home</a></h4>
                 <h4 id="featured-page"><a href="featured.html">Featured</a></h4>
             </div>
@@ -152,9 +169,78 @@
             </div>
         </div>
     </div>
+    <div class="add-overlay">
+        <div class="add">
+            <div class="close-button">&times;</div>
+            <div class="add-content">
+                <form id="create-playlist-form">
+                    <h3>Create New Playlist</h3>
+                    <div class="form-group">
+                        <label for="playlist-name">Playlist Name:</label>
+                        <input type="text" id="playlist-name" name="playlist-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="playlist-author">Author:</label>
+                        <input type="text" id="playlist-author" name="playlist-author" required>
+                    </div>
+                    <div id="songs-section">
+                        <h4>Songs</h4>
+                        <div class="song-entry">
+                            <div class="form-group">
+                                <label for="song-title-1">Song Title:</label>
+                                <input type="text" id="song-title-1" name="song-title-1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="song-artist-1">Artist:</label>
+                                <input type="text" id="song-artist-1" name="song-artist-1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="song-album-1">Album:</label>
+                                <input type="text" id="song-album-1" name="song-album-1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="song-duration-1">Duration:</label>
+                                <input type="text" id="song-duration-1" name="song-duration-1" required>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="add-song-button">Add Another Song</button>
+                    <button type="submit">Create Playlist</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="edit-overlay">
+        <div class="edit">
+            <div class="close-button">&times;</div>
+            <div class="edit-content">
+                <form id="edit-playlist-form">
+                    <h3>Edit Playlist</h3>
+                    <input type="hidden" id="edit-playlist-id">
+                    <div class="form-group">
+                        <label for="edit-playlist-name">Playlist Name:</label>
+                        <input type="text" id="edit-playlist-name" name="edit-playlist-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-playlist-author">Author:</label>
+                        <input type="text" id="edit-playlist-author" name="edit-playlist-author" required>
+                    </div>
+                    <div id="edit-songs-section">
+                        <h4>Songs</h4>
+                        <!-- Song entries will be added dynamically -->
+                    </div>
+                    <button type="button" id="edit-add-song-button">Add Another Song</button>
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <footer>
-
+        <div class="footer-content">
+            <p>&copy;King Igbozuruike</p>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
