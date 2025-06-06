@@ -121,7 +121,6 @@ footer {
 .playlistcards {
     display: flex;
     flex-wrap: wrap;
-    /* background-color: white; */
     justify-content: center;
     column-gap: 15px;
     row-gap: 15px;

@@ -45,19 +45,15 @@ function fetchPlaylistData() {
     });
 }
 
-// Store like counts for each playlist
 const playlistLikeCounts = {};
 
-// Function to get or generate a like count for a playlist
 function getLikeCount(playlistId) {
     if (!playlistLikeCounts[playlistId]) {
-        // Generate a random like count if it doesn't exist yet
         playlistLikeCounts[playlistId] = Math.floor(Math.random() * 1000);
     }
     return playlistLikeCounts[playlistId];
 }
 
-// Function to filter playlists by search query
 function filterPlaylists(playlists, query) {
     if (!query) return playlists;
 
@@ -68,7 +64,6 @@ function filterPlaylists(playlists, query) {
     );
 }
 
-// Function to sort playlists
 function sortPlaylists(playlists, sortOption) {
     const sortedPlaylists = [...playlists];
 
@@ -93,23 +88,18 @@ function sortPlaylists(playlists, sortOption) {
     return sortedPlaylists;
 }
 
-// Function to update the UI with filtered/sorted playlists
 function updatePlaylistsUI(playlists) {
     const playlistContainer = document.querySelector('.playlistcards');
 
-    // Clear existing playlist cards
     while (playlistContainer.firstChild) {
         playlistContainer.removeChild(playlistContainer.firstChild);
     }
 
-    // Add playlists to the UI
     playlists.forEach(playlist => {
-        // Create a new card for each playlist
         const card = document.createElement('div');
         card.className = 'playlist-card';
         card.dataset.playlistId = playlist.playlistID;
 
-        // Get or generate a consistent like count for this playlist
         const likeCount = getLikeCount(playlist.playlistID);
 
         card.innerHTML = `
@@ -128,7 +118,6 @@ function updatePlaylistsUI(playlists) {
             <button class="edit-playlist-button" title="Edit Playlist">✎</button>
         `;
 
-        // Add click event to show modal
         card.addEventListener('click', () => {
             const modalOverlay = document.querySelector('.modal-overlay');
             const modalTitle = document.getElementById("modal-title");
@@ -142,7 +131,6 @@ function updatePlaylistsUI(playlists) {
             displaySongs(playlist.songs, songsContainer);
         });
 
-        // Add like functionality
         const heart = card.querySelector('.heart');
         const likeCountElement = card.querySelector('.num');
         let isLiked = false;
@@ -173,7 +161,6 @@ function updatePlaylistsUI(playlists) {
             likeCountElement.innerText = likeCount;
         });
 
-        // Add delete button functionality
         const deleteButton = card.querySelector('.delete-playlist-button');
         deleteButton.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -190,7 +177,6 @@ function updatePlaylistsUI(playlists) {
             }
         });
 
-        // Add edit button functionality
         const editButton = card.querySelector('.edit-playlist-button');
         editButton.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -210,13 +196,10 @@ function initializeIndexPage(playlists) {
     const sortSelect = document.getElementById('sort-select');
     const songsContainer = document.getElementById("songs-container");
 
-    // Initialize the UI with all playlists
     updatePlaylistsUI(playlists);
 
-    // Set up real-time search functionality
     let currentSearchQuery = '';
 
-    // Real-time search on input change (typing or deleting)
     searchInput.addEventListener('input', () => {
         currentSearchQuery = searchInput.value.trim();
         const filteredPlaylists = filterPlaylists(playlists, currentSearchQuery);
@@ -225,7 +208,6 @@ function initializeIndexPage(playlists) {
         updatePlaylistsUI(sortedPlaylists);
     });
 
-    // Keep the search button for accessibility
     searchButton.addEventListener('click', () => {
         currentSearchQuery = searchInput.value.trim();
         const filteredPlaylists = filterPlaylists(playlists, currentSearchQuery);
@@ -234,7 +216,6 @@ function initializeIndexPage(playlists) {
         updatePlaylistsUI(sortedPlaylists);
     });
 
-    // Set up sort functionality
     sortSelect.addEventListener('change', () => {
         const sortOption = sortSelect.value;
         const filteredPlaylists = filterPlaylists(playlists, currentSearchQuery);
@@ -242,7 +223,6 @@ function initializeIndexPage(playlists) {
         updatePlaylistsUI(sortedPlaylists);
     });
 
-    // Track current playlist for shuffle functionality
     let currentPlaylist = null;
 
     if (shuffleButton) {
@@ -255,20 +235,16 @@ function initializeIndexPage(playlists) {
         });
     }
 
-    // Set up modal close button
     if (closeButton) {
         closeButton.addEventListener('click', () => {
             modalOverlay.style.display = 'none';
         });
     }
 
-    // Update the click event handler for playlist cards
     document.addEventListener('click', (event) => {
-        // Check if the clicked element is a playlist card or inside a playlist card
         const playlistCard = event.target.closest('.playlist-card');
 
         if (playlistCard) {
-            // Don't trigger if clicking on buttons inside the card
             if (
                 event.target.classList.contains('delete-playlist-button') ||
                 event.target.classList.contains('edit-playlist-button') ||
@@ -547,7 +523,6 @@ document.getElementById('create-playlist-form').addEventListener('submit', funct
     });
 });
 
-// Close button for edit overlay
 const editOverlayCloseButton = document.querySelector('.edit-overlay .close-button');
 if (editOverlayCloseButton) {
     editOverlayCloseButton.addEventListener('click', () => {
@@ -555,7 +530,6 @@ if (editOverlayCloseButton) {
     });
 }
 
-// Add song button functionality for edit form
 document.getElementById('edit-add-song-button').addEventListener('click', function() {
     const songCount = document.querySelectorAll('#edit-songs-section .song-entry').length + 1;
     const songEntry = document.createElement('div');
@@ -706,18 +680,15 @@ function openEditPlaylistOverlay(playlist) {
         });
     }
 
-    // Add direct event listener to the submit button
     const submitButton = document.querySelector('#edit-playlist-form button[type="submit"]');
     if (submitButton) {
         submitButton.addEventListener('click', function(event) {
             event.preventDefault();
 
-            // Get form data
             const playlistId = document.getElementById('edit-playlist-id').value;
             const playlistName = document.getElementById('edit-playlist-name').value;
             const playlistAuthor = document.getElementById('edit-playlist-author').value;
 
-            // Find the playlist in the data structure
             let playlist = null;
             let playlistIndex = -1;
 
@@ -733,24 +704,19 @@ function openEditPlaylistOverlay(playlist) {
                 return;
             }
 
-            // Update playlist details
             playlist.playlist_name = playlistName;
             playlist.playlist_author = playlistAuthor;
 
-            // Clear existing songs
             playlist.songs = {};
 
-            // Add songs from the form
             const songEntries = document.querySelectorAll('#edit-songs-section .song-entry');
             songEntries.forEach((entry) => {
-                // Find the correct input fields within this specific song entry
                 const titleInput = entry.querySelector('input[id^="edit-song-title-"]');
                 const artistInput = entry.querySelector('input[id^="edit-song-artist-"]');
                 const albumInput = entry.querySelector('input[id^="edit-song-album-"]');
                 const durationInput = entry.querySelector('input[id^="edit-song-duration-"]');
 
                 if (titleInput && artistInput && albumInput && durationInput) {
-                    // Use existing song ID if available, otherwise create a new one
                     const songId = entry.dataset.songId && !entry.dataset.songId.startsWith('new-')
                         ? entry.dataset.songId
                         : `s${Math.floor(Math.random() * 10000).toString().padStart(3, '0')}`;
@@ -775,14 +741,11 @@ function openEditPlaylistOverlay(playlist) {
                     if (playlistTitle) playlistTitle.innerText = playlistName;
                     if (playlistCreator) playlistCreator.innerText = playlistAuthor;
 
-                    // Update the click event handler to use the latest playlist data
                     const updatedPlaylist = playlist; // Reference to the updated playlist
 
-                    // Remove old click event listeners
                     const newCard = playlistCards[i].cloneNode(true);
                     playlistCards[i].parentNode.replaceChild(newCard, playlistCards[i]);
 
-                    // Add new click event listener with updated playlist data
                     newCard.addEventListener('click', () => {
                         const modalOverlay = document.querySelector('.modal-overlay');
                         const modalTitle = document.getElementById("modal-title");
@@ -796,7 +759,6 @@ function openEditPlaylistOverlay(playlist) {
                         displaySongs(updatedPlaylist.songs, songsContainer);
                     });
 
-                    // Re-add delete button functionality
                     const deleteButton = newCard.querySelector('.delete-playlist-button');
                     if (deleteButton) {
                         deleteButton.addEventListener('click', (event) => {
@@ -813,7 +775,6 @@ function openEditPlaylistOverlay(playlist) {
                         });
                     }
 
-                    // Re-add edit button functionality
                     const editButton = newCard.querySelector('.edit-playlist-button');
                     if (editButton) {
                         editButton.addEventListener('click', (event) => {
@@ -822,7 +783,6 @@ function openEditPlaylistOverlay(playlist) {
                         });
                     }
 
-                    // Re-add like functionality
                     const likeContainer = newCard.querySelector('.like-count');
                     if (likeContainer) {
                         const heart = likeContainer.querySelector('.heart');
@@ -850,7 +810,6 @@ function openEditPlaylistOverlay(playlist) {
                 }
             }
 
-            // Close the edit overlay
             document.querySelector('.edit-overlay').style.display = 'none';
 
             console.log('Playlist updated:', playlist);
@@ -859,7 +818,6 @@ function openEditPlaylistOverlay(playlist) {
 }
 
 function updateUIWithNewPlaylist(newPlaylist) {
-    // Get the container for playlist cards
     const playlistContainer = document.querySelector('.playlistcards');
 
     if (!playlistContainer) {
@@ -867,15 +825,12 @@ function updateUIWithNewPlaylist(newPlaylist) {
         return;
     }
 
-    // Create a new playlist card
     const newCard = document.createElement('div');
     newCard.className = 'playlist-card';
     newCard.dataset.playlistId = newPlaylist.playlistID;
 
-    // Get or generate a consistent like count for this playlist
     const likeCount = getLikeCount(newPlaylist.playlistID);
 
-    // Create the HTML structure for the new card
     newCard.innerHTML = `
         <div class="playlist-image">
             <img src="${newPlaylist.playlist_art}" alt="">
@@ -925,17 +880,13 @@ function updateUIWithNewPlaylist(newPlaylist) {
         likeCountElement.innerText = likeCount;
     });
 
-    // Add delete button functionality
     const deleteButton = newCard.querySelector('.delete-playlist-button');
     deleteButton.addEventListener('click', (event) => {
         event.stopPropagation(); // Prevent triggering playlist card click
 
-        // Confirm before deleting
         if (confirm(`Are you sure you want to delete "${newPlaylist.playlist_name}"?`)) {
-            // Remove from UI
             newCard.remove();
 
-            // Remove from data structure
             if (globalPlaylistsData) {
                 const index = globalPlaylistsData.playlists.findIndex(p => p.playlistID === newPlaylist.playlistID);
                 if (index !== -1) {
@@ -946,7 +897,6 @@ function updateUIWithNewPlaylist(newPlaylist) {
         }
     });
 
-    // Add edit button functionality
     const editButton = newCard.querySelector('.edit-playlist-button');
     editButton.addEventListener('click', (event) => {
         event.stopPropagation(); // Prevent triggering playlist card click
