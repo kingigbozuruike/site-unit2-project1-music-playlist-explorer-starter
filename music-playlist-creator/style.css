@@ -5,19 +5,28 @@ body {
     margin: 0;
     padding: 0;
     background-color: white;
+    min-height: 100vh;
+    position: relative;
 }
 
 #navbar {
     background-color: #c5c1c1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px;
 }
-#navbar-name {
-    margin-top: 0;
-    padding: 10px 10px 10px 10px;
+.right-side {
+    display: flex;
+    gap: 20px;
 }
 
 footer {
     background-color: #c5c1c1;
     padding: 10px 10px 10px 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .playlistcards {
@@ -26,8 +35,10 @@ footer {
     background-color: white;
     justify-content: center;
     column-gap: 15px;
-    row-gap: 15px;}
-
+    row-gap: 15px;
+    margin-bottom: 20px;
+    padding: 20px 20px 40px 20px;
+}
 .playlist-card {
     width: 300px;
     padding: 10px;
@@ -192,3 +203,93 @@ footer {
     padding: 0 20px 20px;
     margin-top: 10px;
 }
+
+
+
+/* styling for featured page now */
+.featured_content {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.featured-info {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.featured-image {
+width: 250px;
+height: 250px;
+overflow: hidden;
+border-radius: 8px;
+margin-bottom: 15px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.featured-image img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+#featured-name {
+font-size: 1.5rem;
+text-align: center;
+color: #222;
+}
+
+#song-list {
+flex: 2;
+overflow-y: auto;
+max-height: 78vh;
+}
+
+/* .song-row {
+display: flex;
+align-items: center;
+padding: 10px 0;
+border-bottom: 1px solid #eee;
+}
+
+.song-row .grid-col-1 {
+width: 60px;
+margin-right: 15px;
+}
+
+.song-row .grid-col-1 img {
+width: 60px;
+height: 60px;
+border-radius: 6px;
+object-fit: cover;
+}
+
+.song-row .grid-col-2 {
+flex-grow: 1;
+}
+
+.song-row .grid-col-2 h4 {
+margin: 0 0 4px 0;
+font-size: 1rem;
+font-weight: 600;
+}
+
+.song-row .grid-col-2 p {
+margin: 2px 0;
+color: #555;
+font-size: 0.9rem;
+}
+
+.song-row .grid-col-3 {
+width: 50px;
+text-align: right;
+font-size: 0.9rem;
+color: #666;
+} */
