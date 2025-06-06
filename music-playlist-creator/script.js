@@ -59,6 +59,34 @@ fetch("data/data.json")
         closeButton.addEventListener('click', () => {
             modalOverlay.style.display = 'none';
         });
+
+        const likeContainers = document.querySelectorAll('.like-count');
+
+        likeContainers.forEach(container => {
+            const heart = container.querySelector('.heart');
+            const likeCountElement = container.querySelector('.num');
+            let isLiked = false;
+
+            min = Math.ceil(1);
+            max = Math.floor(5000);
+            likeCountElement.innerText = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            let likeCount = parseInt(likeCountElement.innerText);
+
+            container.addEventListener('click', (event) => {
+                event.stopPropagation();
+                isLiked = !isLiked;
+                heart.classList.toggle('active');
+                if (isLiked) {
+                    likeCount++;
+                    heart.src = "assets/img/heart_red.png";
+                } else {
+                    likeCount--;
+                    heart.src = "assets/img/heart.png";
+                }
+                likeCountElement.innerText = likeCount;
+            });
+        });
     })
     .catch(error => {
         console.error('Fetch error:', error);

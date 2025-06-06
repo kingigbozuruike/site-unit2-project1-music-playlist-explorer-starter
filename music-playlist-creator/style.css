@@ -48,7 +48,13 @@ footer {
 }
 .heart {
     height: 25px;
+    cursor: pointer;
 }
+.heart:hover {
+    scale: 120%;
+    transition: ease 0.2s;
+}
+
 .like-count {
     display: flex;
     gap: 5px;
