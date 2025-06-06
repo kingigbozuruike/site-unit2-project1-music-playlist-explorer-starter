@@ -1,10 +1,15 @@
 const addButton = document.querySelector('.add-button');
 const addOverlay = document.querySelector('.add-overlay');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/index.html');
-    const isFeaturedPage = window.location.pathname.endsWith('featured.html') || window.location.pathname.endsWith('/featured.html');
+let globalPlaylistsData = null;
 
+document.addEventListener('DOMContentLoaded', () => {
+    const basePath = '/music-playlist-creator/'
+    const relativePath = window.location.pathname.startsWith(basePath)
+        ? window.location.pathname.slice(basePath.length)
+        : window.location.pathname;
+    const isIndexPage = relativePath === '' || relativePath === 'index.html';
+    const isFeaturedPage = relativePath === 'featured.html';
     fetchPlaylistData()
     .then(data => {
         globalPlaylistsData = data;
@@ -23,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function fetchPlaylistData() {
-    return fetch("./data/data.json")
+    return fetch("data/data.json")
     .then(response => {
         if (!response.ok) {
             throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
@@ -446,7 +451,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-let globalPlaylistsData = null;
 
 document.getElementById('create-playlist-form').addEventListener('submit', function(event) {
     event.preventDefault();
