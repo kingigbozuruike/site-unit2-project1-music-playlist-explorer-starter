@@ -4,7 +4,7 @@
       "playlistID": "pl001",
       "playlist_name": "Afrobeats Essentials",
       "playlist_author": "African Rhythms",
-      "playlist_art": "assets/img/playlist.png",
+      "playlist_art": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da841f20c9757ff05f7786ea9992",
       "songs": {
         "s001": {
           "song_name": "Last Last",
@@ -61,7 +61,7 @@
       "playlistID": "pl002",
       "playlist_name": "Pop Hits 2023",
       "playlist_author": "Chart Toppers",
-      "playlist_art": "assets/img/playlist.png",
+      "playlist_art": "https://cdn-images.dzcdn.net/images/cover/67f698a76c4f2b766a633245dd1ff0ec/0x1900-000000-80-0-0.jpg",
       "songs": {
         "s008": {
           "song_name": "Flowers",
@@ -118,7 +118,7 @@
       "playlistID": "pl003",
       "playlist_name": "Indie Vibes",
       "playlist_author": "Alternative Sounds",
-      "playlist_art": "assets/img/playlist.png",
+      "playlist_art": "https://i0.wp.com/creativesfeed.com/wp-content/uploads/2018/08/Art-vs-Science-by-Andrew-Fairclough.jpg?w=8000&ssl=1",
       "songs": {
         "s015": {
           "song_name": "Chaise Longue",
@@ -168,7 +168,7 @@
       "playlistID": "pl004",
       "playlist_name": "Hip Hop Essentials",
       "playlist_author": "Beats & Rhymes",
-      "playlist_art": "assets/img/playlist.png",
+      "playlist_art": "https://cdn-images.dzcdn.net/images/cover/a00e13998d6ee89a9f78e2edfb1b51f0/0x1900-000000-80-0-0.jpg",
       "songs": {
         "s021": {
           "song_name": "First Person Shooter",
@@ -225,7 +225,7 @@
       "playlistID": "pl005",
       "playlist_name": "R&B Classics",
       "playlist_author": "Soul Sessions",
-      "playlist_art": "assets/img/playlist.png",
+      "playlist_art": "https://cdn-images.dzcdn.net/images/cover/fcd96301bea40467fa73db9953b9f948/0x1900-000000-80-0-0.jpg",
       "songs": {
         "s028": {
           "song_name": "Snooze",
@@ -282,7 +282,7 @@
       "playlistID": "pl006",
       "playlist_name": "Electronic Dance",
       "playlist_author": "Festival Vibes",
-      "playlist_art": "assets/img/playlist.png",
+      "playlist_art": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/electronic-dance-music-cd-cover-art-template-design-7ead7c67f2ff1c919a1db89f0ebb331d_screen.jpg?ts=1737949922",
       "songs": {
         "s035": {
           "song_name": "Miracle",
@@ -332,7 +332,7 @@
       "playlistID": "pl007",
       "playlist_name": "Rock Anthems",
       "playlist_author": "Guitar Heroes",
-      "playlist_art": "assets/img/playlist.png",
+      "playlist_art": "https://www.shutterstock.com/image-illustration/digital-illustration-rock-guitarist-600nw-2232762717.jpg",
       "songs": {
         "s041": {
           "song_name": "Lost",
@@ -389,7 +389,7 @@
       "playlistID": "pl008",
       "playlist_name": "Latin Rhythms",
       "playlist_author": "Ritmos Latinos",
-      "playlist_art": "assets/img/playlist.png",
+      "playlist_art": "https://liveartswithsavona.wordpress.com/wp-content/uploads/2016/07/d7b68-puente_king.jpg",
       "songs": {
         "s048": {
           "song_name": "La Bachata",

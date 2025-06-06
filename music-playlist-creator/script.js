@@ -147,6 +147,16 @@ function updatePlaylistsUI(playlists) {
         const likeCountElement = card.querySelector('.num');
         let isLiked = false;
 
+        heart.addEventListener('mouseenter', () => {
+            heart.src = "assets/img/heart_red.png";
+        });
+
+        heart.addEventListener('mouseleave', () => {
+            if (!isLiked) {
+                heart.src = "assets/img/heart.png";
+            }
+        });
+
         card.querySelector('.like-count').addEventListener('click', (event) => {
             event.stopPropagation();
             isLiked = !isLiked;
@@ -286,9 +296,10 @@ function initializeIndexPage(playlists) {
 function initializeFeaturedPage(playlists) {
     const featuredName = document.getElementById('featured-name');
     const featuredAuthor = document.getElementById('featured-creator');
+    const featuredImage = document.getElementById('image');
     const songContent = document.getElementById('song-list');
 
-    if (!featuredName || !featuredAuthor || !songContent) {
+    if (!featuredName || !featuredAuthor || !songContent || !featuredImage) {
         console.error('Required DOM elements not found for featured page');
         return;
     }
@@ -300,6 +311,7 @@ function initializeFeaturedPage(playlists) {
 
     featuredName.innerText = randomPlaylist.playlist_name;
     featuredAuthor.innerText = randomPlaylist.playlist_author;
+    featuredImage.src = randomPlaylist.playlist_art;
 
     displaySongs(randomPlaylist.songs, songContent);
 }
@@ -579,10 +591,6 @@ document.getElementById('edit-add-song-button').addEventListener('click', functi
     });
 });
 
-// No need for a separate handleEditFormSubmit function since we're using a direct click handler
-// in the openEditPlaylistOverlay function
-
-// Function to open the edit playlist overlay
 function openEditPlaylistOverlay(playlist) {
     const editOverlay = document.querySelector('.edit-overlay');
     const editPlaylistId = document.getElementById('edit-playlist-id');
@@ -591,17 +599,14 @@ function openEditPlaylistOverlay(playlist) {
     const editSongsSection = document.getElementById('edit-songs-section');
     const editForm = document.getElementById('edit-playlist-form');
 
-    // Clear previous songs
     while (editSongsSection.children.length > 1) { // Keep the h4 heading
         editSongsSection.removeChild(editSongsSection.lastChild);
     }
 
-    // Set playlist details
     editPlaylistId.value = playlist.playlistID;
     editPlaylistName.value = playlist.playlist_name;
     editPlaylistAuthor.value = playlist.playlist_author;
 
-    // Add songs to the form
     let songIndex = 0;
     for (const songId in playlist.songs) {
         const song = playlist.songs[songId];
@@ -644,14 +649,11 @@ function openEditPlaylistOverlay(playlist) {
         });
     }
 
-    // Show the edit overlay
     editOverlay.style.display = 'flex';
 
-    // Clear any existing event listeners by cloning and replacing the form
     const newForm = editForm.cloneNode(true);
     editForm.parentNode.replaceChild(newForm, editForm);
 
-    // Re-add all the song delete button event listeners
     const songEntries = document.querySelectorAll('#edit-songs-section .song-entry');
     songEntries.forEach(entry => {
         const deleteButton = entry.querySelector('.delete-song-button');
@@ -666,7 +668,6 @@ function openEditPlaylistOverlay(playlist) {
         }
     });
 
-    // Add event listener to the edit-add-song-button
     const addSongButton = document.getElementById('edit-add-song-button');
     if (addSongButton) {
         addSongButton.addEventListener('click', function() {
