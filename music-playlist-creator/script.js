@@ -2,8 +2,8 @@ const addButton = document.querySelector('.add-button');
 const addOverlay = document.querySelector('.add-overlay');
 
 document.addEventListener('DOMContentLoaded', () => {
-    const isIndexPage = window.location.href.includes('index.html');
-    const isFeaturedPage = window.location.href.includes('featured.html');
+    const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/index.html');
+    const isFeaturedPage = window.location.pathname.endsWith('featured.html') || window.location.pathname.endsWith('/featured.html');
 
     fetchPlaylistData()
     .then(data => {
