@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function fetchPlaylistData() {
-    return fetch("data/data.json")
+    return fetch("./data/data.json")
     .then(response => {
         if (!response.ok) {
             throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
