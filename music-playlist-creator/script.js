@@ -3,32 +3,8 @@ const addOverlay = document.querySelector('.add-overlay');
 
 let globalPlaylistsData = null;
 
-document.addEventListener('DOMContentLoaded', () => {
-    const basePath = '/music-playlist-creator/'
-    const relativePath = window.location.pathname.startsWith(basePath)
-        ? window.location.pathname.slice(basePath.length)
-        : window.location.pathname;
-    const isIndexPage = relativePath === '' || relativePath === 'index.html';
-    const isFeaturedPage = relativePath === 'featured.html';
-    fetchPlaylistData()
-    .then(data => {
-        globalPlaylistsData = data;
-        const playlists = data.playlists;
-        if (isIndexPage) {
-        initializeIndexPage(playlists);
-        fetchPlaylistData()
-        }
-        if (isFeaturedPage) {
-        initializeFeaturedPage(playlists);
-        }
-    })
-    .catch(error => {
-    console.error('Application error:', error);
-    });
-});
-
-
-function fetchPlaylistData() {
+function fetchPlaylistData(page) {
+    console.log("Fetching data from data.json")
     return fetch("data/data.json")
     .then(response => {
         if (!response.ok) {
@@ -38,6 +14,15 @@ function fetchPlaylistData() {
     })
     .then(data => {
         console.log('Data fetched successfully:', data);
+        if (page === 'index') {
+            initializeIndexPage(data.playlists);
+        } else if (page === 'feature') {
+            initializeFeaturedPage(data.playlists);
+            console.log("FEATURE PAGE")
+        } else {
+            console.error("THIS IS NOT WORKING!!!!!!")
+        }
+
         return data;
     })
     .catch(error => {
@@ -242,6 +227,40 @@ function initializeIndexPage(playlists) {
         });
     }
 
+    document.getElementById('add-song-button').addEventListener('click', function() {
+        const songCount = document.querySelectorAll('.song-entry').length + 1;
+        const songEntry = document.createElement('div');
+        songEntry.classList.add('song-entry');
+        songEntry.innerHTML = `
+            <div class="form-group">
+                <label for="song-title-${songCount}">Song Title:</label>
+                <input type="text" id="song-title-${songCount}" name="song-title-${songCount}" required>
+            </div>
+            <div class="form-group">
+                <label for="song-artist-${songCount}">Artist:</label>
+                <input type="text" id="song-artist-${songCount}" name="song-artist-${songCount}" required>
+            </div>
+            <div class="form-group">
+                <label for="song-album-${songCount}">Album:</label>
+                <input type="text" id="song-album-${songCount}" name="song-album-${songCount}" required>
+            </div>
+            <div class="form-group">
+                <label for="song-duration-${songCount}">Duration:</label>
+                <input type="text" id="song-duration-${songCount}" name="song-duration-${songCount}" required>
+            </div>
+            <button type="button" class="delete-song-button">Delete Song</button>
+        `;
+
+        /////////////////////////////
+
+
+        document.getElementById('songs-section').appendChild(songEntry);
+
+        const deleteButton = songEntry.querySelector('.delete-song-button');
+        deleteButton.addEventListener('click', function() {
+            songEntry.remove();
+        });
+    });
     document.addEventListener('click', (event) => {
         const playlistCard = event.target.closest('.playlist-card');
 
@@ -391,36 +410,7 @@ if (addOverlayCloseButton) {
     });
 }
 
-document.getElementById('add-song-button').addEventListener('click', function() {
-    const songCount = document.querySelectorAll('.song-entry').length + 1;
-    const songEntry = document.createElement('div');
-    songEntry.classList.add('song-entry');
-    songEntry.innerHTML = `
-        <div class="form-group">
-            <label for="song-title-${songCount}">Song Title:</label>
-            <input type="text" id="song-title-${songCount}" name="song-title-${songCount}" required>
-        </div>
-        <div class="form-group">
-            <label for="song-artist-${songCount}">Artist:</label>
-            <input type="text" id="song-artist-${songCount}" name="song-artist-${songCount}" required>
-        </div>
-        <div class="form-group">
-            <label for="song-album-${songCount}">Album:</label>
-            <input type="text" id="song-album-${songCount}" name="song-album-${songCount}" required>
-        </div>
-        <div class="form-group">
-            <label for="song-duration-${songCount}">Duration:</label>
-            <input type="text" id="song-duration-${songCount}" name="song-duration-${songCount}" required>
-        </div>
-        <button type="button" class="delete-song-button">Delete Song</button>
-    `;
-    document.getElementById('songs-section').appendChild(songEntry);
 
-    const deleteButton = songEntry.querySelector('.delete-song-button');
-    deleteButton.addEventListener('click', function() {
-        songEntry.remove();
-    });
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     const firstSongEntry = document.querySelector('.song-entry');
